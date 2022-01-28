@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-storybook-compilation/ng-lib-bar": ["libs/ng-lib-bar/src/index.ts"],
+      "@nx-storybook-compilation/ng-lib-foo": ["libs/ng-lib-foo/src/index.ts"],
+      "@nx-storybook-compilation/shared/storybook": [
+        "libs/shared/storybook/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

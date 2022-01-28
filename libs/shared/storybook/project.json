@@ -1,0 +1,59 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/storybook",
+  "sourceRoot": "libs/shared/storybook/src",
+  "prefix": "nx-storybook-compilation",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/storybook"],
+      "options": {
+        "jestConfig": "libs/shared/storybook/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/storybook/src/**/*.ts",
+          "libs/shared/storybook/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/shared/storybook/.storybook"
+        },
+        "projectBuildConfig": "shared-storybook:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/shared-storybook",
+        "config": {
+          "configFolder": "libs/shared/storybook/.storybook"
+        },
+        "projectBuildConfig": "shared-storybook:build-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

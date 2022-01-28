@@ -1,4 +1,11 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "ng-lib-bar": "libs/ng-lib-bar",
+    "ng-lib-foo": "libs/ng-lib-foo",
+    "nx-api": "apps/nx-api",
+    "nx-ui": "apps/nx-ui",
+    "nx-ui-e2e": "apps/nx-ui-e2e",
+    "shared-storybook": "libs/shared/storybook"
+  }
 }

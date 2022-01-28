@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/ng-lib-foo",
+  "sourceRoot": "libs/ng-lib-foo/src",
+  "prefix": "nx-storybook-compilation",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ng-lib-foo"],
+      "options": {
+        "jestConfig": "libs/ng-lib-foo/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng-lib-foo/src/**/*.ts",
+          "libs/ng-lib-foo/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
